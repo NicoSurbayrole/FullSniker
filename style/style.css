@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bg{
+    background-color:peru;
+}
+
+.boton{
+    background-color: white;
+    border: 1px solid black;
+}
+
+.boton:hover{
+    background-color: white;
+}
