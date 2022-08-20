@@ -9,12 +9,13 @@ html {
 
 h1 {
   text-align: center;
+  font-weight: bold;
 }
 
 p {
+  font-size: 12px;
   text-align: center;
   font-size: 1rem;
-  font-weight: bold;
 }
 
 header {
@@ -24,37 +25,32 @@ header {
 }
 
 footer {
+  grid-area: footer;
   padding: 1rem;
   background-color: peru;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 
-p{
-    font-size: 12px;
-}
-
 .textNav{
-    font-size: 1.5rem;
-}
-
-.inputNav, .btNav{
-    font-size: 1.5rem;
+    font-size: 14px;
 }
 
 .bg {
   background-color: peru;
 }
+.inputNav, .btNav{
+    font-size: 1.5rem;
+    display: none;
+}
 
-.boton {
+/* .boton {
   background-color: white;
   border: 1px solid black;
 }
 
 .boton:hover {
   background-color: white;
-}
+} */
 
 .cardImg {
   width: 100%;
@@ -68,16 +64,6 @@ p{
   margin: 0 auto;
 }
 
-.redes {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.icon {
-  height: 10rem;
-  width: 10rem;
-}
-
 .home {
   padding-top: 6rem;
   grid-area: home;
@@ -86,6 +72,149 @@ p{
 .mainInterno {
   display: grid;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem ;
+}
+
+.redes {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon {
+  height: 7rem;
+  width: 7rem;
+}
+
+.grilla{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "home"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows:  1fr;
+}
+
+@media(min-width:500px){
+  .grilla{
+    margin: 0;
+    grid-template-areas: 
+    "header  header  "
+    "home    home    "
+    "footer  footer ";
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .mainInterno {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem ;
+  }
+
+  h1{
+    font-size: 15px;
+  }
+
+  p{
+    font-size: 12px;
+  }
+  footer{
+    position:static;
+  }
+}
+
+
+@media(min-width:700px){
+  h1{
+    font-size: 18px;
+  }
+
+  p{
+    font-size: 15px;
+  }
+
+  .textNav{
+    font-size: 18px;
+  }
+
+  footer{
+    position:static;
+  }
+}
+
+@media(min-width:1000px){
+  .grilla{
+    margin: 0;
+    grid-template-areas: 
+    "header  header header "
+    "home    home   home"
+    "footer  footer footer ";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .mainInterno {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem ;
+  }
+
+  .icon {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .textNav{
+    font-size: 16px;
+}
+
+  h1{
+    font-size: 25px;
+  }
+
+  p{
+    font-size: 15px;
+  }
+}
+
+@media(min-width:1200px){
+  .grilla{
+    margin: 0;
+    grid-template-areas: 
+    "header  header header header "
+    "home    home   home home"
+    "footer  footer footer footer ";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .mainInterno {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem ;
+  }
+
+  .icon {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .textNav{
+      font-size: 16px;
+  }
+
+  h1{
+    font-size: 23px;
+  }
+
+  footer{
+    bottom: 0px;
+    position: absolute;
+  }
+
 }

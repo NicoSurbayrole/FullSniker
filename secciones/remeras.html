@@ -14,92 +14,121 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../index.html">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a
-                  class="text-dark nav-link dropdown-toggle textNav"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Productos
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item textNav" href="./allProducts.html"
-                      >Todos los Productos</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item textNav" href="./remeras.html">Remeras</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item textNav" href="./buzos.html">Buzos</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item textNav" href="./pantalones.html"
-                      >Pantalones</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item textNav" href="./zapatillas.html"
-                      >Zapatillas</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active textNav"
-                  aria-current="page"
-                  href="./nostros.html"
-                  >Nosotros</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link active textNav"
-                  aria-current="page"
-                  href="./contacto.html"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn boton" type="submit">Buscar</button>
-            </form>
+    <div class="grilla">
+      <header>
+        <nav class="navbar navbar-expand-lg bg">
+          <div class="container-fluid">
+            <a class="navbar-brand textNav" href="../index.html">Navbar</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    class="text-dark textNav nav-link dropdown-toggle"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Productos
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item textNav" href="../secciones/remeras.html"
+                        >Remeras</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item textNav" href="../secciones/buzos.html"
+                        >Buzos</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a
+                        class="dropdown-item textNav"
+                        href="../secciones/pantalones.html"
+                        >Pantalones</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item textNav"
+                        href="../secciones/zapatillas.html"
+                        >Zapatillas</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active textNav"
+                    aria-current="page"
+                    href="../secciones/nostros.html"
+                    >Nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link active textNav"
+                    aria-current="page"
+                    href="../secciones/contacto.html"
+                    >Contacto</a
+                  >
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2 inputNav"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btNav" type="submit">Buscar</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+
+      <footer>
+        <section class="redes">
+          <a href=""
+            ><img
+              class="icon"
+              src="../imagenes/icons8-facebook.svg"
+              alt="facebook"
+          /></a>
+          <a href="https://www.instagram.com/nico.surba/"
+            ><img
+              class="icon"
+              src="../imagenes/icons8-instagram.svg"
+              alt="instagram"
+          /></a>
+          <a href="https://www.linkedin.com/in/nico-surbayrole/"
+            ><img
+              class="icon"
+              src="../imagenes/icons8-linkedin-rodeado-de-círculo.svg"
+              alt="linkedin"
+          /></a>
+        </section>
+      </footer>
+    </div>
 
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
+
