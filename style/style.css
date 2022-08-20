@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost&family=Playfair+Display:ital@1&family=Roboto:ital@1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,18 +9,31 @@ html {
   font-size: 62.5%;
 }
 
-header {
-  grid-area: header;
+p {
+  font-family: "Roboto", sans-serif;
 }
-header nav {
-  background-color: peru;
-}
-header nav a {
+
+header a {
+  font-family: "Jost", sans-serif;
   font-size: 14px;
 }
-header nav a:hover {
+
+.mainInterno h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+nav, footer {
+  background-color: peru;
+}
+
+header a:hover {
   background-color: gainsboro;
   border-radius: 20%;
+}
+
+header {
+  grid-area: header;
 }
 
 .carrousel {
@@ -39,24 +54,16 @@ header nav a:hover {
   justify-items: center;
   grid-template-columns: 1fr;
 }
-.home .mainInterno .imagenes {
+.home .mainInterno img {
   height: 20rem;
   width: 20rem;
   display: grid;
   margin: 0 auto;
 }
-.home .mainInterno h1 {
-  text-align: center;
-  font-weight: bold;
-}
-.home .mainInterno p {
-  font-size: 14px;
-}
 
 footer {
   grid-area: footer;
   padding: 1rem;
-  background-color: peru;
   width: 100%;
   bottom: 0px;
 }

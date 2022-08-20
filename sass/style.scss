@@ -1,24 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
+@import "general";
+@import "tipografia";
+@import "colores";
 
 header {
   grid-area: header;
-  nav {
-    background-color: peru;
-    a {
-      font-size: 14px;
-      &:hover{
-        background-color: gainsboro;
-        border-radius: 20%;
-      }
-    }
-  }
 }
 
 .carrousel {
@@ -39,19 +24,11 @@ header {
     justify-items: center;
     grid-template-columns: 1fr;
 
-    .imagenes {
+    img {
       height: 20rem;
       width: 20rem;
       display: grid;
       margin: 0 auto;
-    }
-
-    h1 {
-      text-align: center;
-      font-weight: bold;
-    }
-    p {
-      font-size: 14px;
     }
   }
 }
@@ -59,14 +36,13 @@ header {
 footer {
   grid-area: footer;
   padding: 1rem;
-  background-color: peru;
   width: 100%;
   bottom: 0px;
   img {
     height: 7rem;
     width: 7rem;
   }
-  section{
+  section {
     display: flex;
     justify-content: space-evenly;
   }
