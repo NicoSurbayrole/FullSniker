@@ -64,7 +64,7 @@ footer img {
   height: 7rem;
   width: 7rem;
 }
-footer .redes {
+footer section {
   display: flex;
   justify-content: space-evenly;
 }
