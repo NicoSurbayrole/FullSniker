@@ -1,10 +1,12 @@
+@import "variables" ;
+
 nav,footer {
-    background-color: peru;
+    background-color: $bg;
   }
 
   header{
     a:hover{
-        background-color: gainsboro;
+        background-color: $bgHover;
         border-radius: 20%;
     }
   }
