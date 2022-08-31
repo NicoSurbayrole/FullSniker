@@ -1,7 +1,10 @@
+.bgColor{
+  background-color: $bg;
+}
 
 nav,footer {
-    background-color: $bg;
-  }
+  @extend .bgColor;
+}
 
   header{
     a:hover{

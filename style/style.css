@@ -134,7 +134,7 @@ p {
   font-weight: bold;
 }
 
-nav, footer {
+.bgColor, nav, footer {
   background-color: peru;
 }
 
@@ -143,14 +143,17 @@ header a:hover {
   border-radius: 20%;
 }
 
+.img, .mainInterno img {
+  height: 20rem;
+  width: 20rem;
+}
+
 .carrousel .imgCarrousel {
   width: 100%;
   height: 20rem;
 }
 
 .mainInterno img {
-  height: 20rem;
-  width: 20rem;
   display: grid;
   margin: 0 auto;
 }
