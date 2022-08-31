@@ -6,10 +6,6 @@
 @import "colores";
 @import "imagenes";
 
-header {
-  grid-area: header;
-}
-
 .carrousel {
   padding-top: 2rem;
 }
@@ -28,17 +24,6 @@ footer {
     justify-content: space-evenly;
   }
 
-}
-
-.grilla {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "carrousel"
-    "home"
-    "footer";
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
 }
 
 .formContacto {
