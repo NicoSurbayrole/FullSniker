@@ -5,5 +5,8 @@ $sizeA: 14px;
 $sizeForm: 15px;
 $centro: center;
 $negrita: bold;
-$imgMain: 20rem;
-$iconFooter: 7rem;
+
+@mixin imagen ($imgMain){
+    height: $imgMain;
+    width: $imgMain;
+}

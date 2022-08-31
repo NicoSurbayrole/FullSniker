@@ -1,6 +1,5 @@
 .img {
-  height: $imgMain;
-  width: $imgMain;
+  @include imagen(20rem)
 }
 
 .carrousel {
@@ -16,7 +15,6 @@
   margin: 0 auto;
 }
 
-footer img {
-  height: $iconFooter;
-  width: $iconFooter;
+.icon{
+  @include imagen(10rem)
 }
