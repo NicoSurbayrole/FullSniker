@@ -1,4 +1,3 @@
-
 header {
   grid-area: header;
 }
@@ -112,6 +111,12 @@ footer {
       "footer footer footer";
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  footer {
+    .icon {
+      @include imagen(10rem);
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -144,6 +149,9 @@ footer {
       p {
         font-size: 18px;
       }
+      img {
+        @include imagen(28rem);
+      }
     }
   }
 
@@ -165,4 +173,11 @@ footer {
       "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
+  footer {
+    .icon {
+      @include imagen(12rem);
+    }
+  }
+
 }
