@@ -55,7 +55,7 @@ footer {
       display: grid;
       justify-items: $centro;
       grid-template-columns: 1fr 1fr;
-      h1,
+      h2,
       p {
         font-size: 14px;
         text-align: $centro;
@@ -96,7 +96,7 @@ footer {
       display: grid;
       justify-items: $centro;
       grid-template-columns: 1fr 1fr 1fr;
-      h1 {
+      h2 {
         font-size: 25px;
       }
     }
@@ -160,7 +160,7 @@ footer {
       display: grid;
       justify-items: $centro;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      h1 {
+      h2 {
         font-size: 25px;
       }
       p {

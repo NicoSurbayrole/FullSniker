@@ -42,7 +42,7 @@ footer {
     justify-items: center;
     grid-template-columns: 1fr 1fr;
   }
-  .home .mainInterno h1,
+  .home .mainInterno h2,
 .home .mainInterno p {
     font-size: 14px;
     text-align: center;
@@ -65,7 +65,7 @@ footer {
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .home .mainInterno h1 {
+  .home .mainInterno h2 {
     font-size: 25px;
   }
   .bg div a {
@@ -99,7 +99,7 @@ footer {
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  .home .mainInterno h1 {
+  .home .mainInterno h2 {
     font-size: 25px;
   }
   .home .mainInterno p {
@@ -146,7 +146,7 @@ button {
   font-size: 14px;
 }
 
-.mainInterno h1 {
+.mainInterno h2 {
   text-align: center;
   font-weight: bold;
 }
