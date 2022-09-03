@@ -9,13 +9,11 @@
 
 .carrousel {
   padding-top: 2rem;
-  .imgCarrousel{
+  .imgCarrousel {
     height: 100%;
     width: 100%;
   }
 }
-
-
 
 .home {
   padding: 6rem 0px;
@@ -31,6 +29,10 @@ footer {
     justify-content: space-evenly;
   }
 
+  .footerZapatillas {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 
 .formContacto {
@@ -39,12 +41,13 @@ footer {
   justify-content: $centro;
 }
 
-.mainContacto{
-  label{
+.mainContacto {
+  label {
     font-size: $saizeContacto;
     color: black;
   }
-  input,textarea{
+  input,
+  textarea {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -53,7 +56,7 @@ footer {
   }
 }
 
-.containerContacto{
+.containerContacto {
   background-color: $bg;
   width: 50%;
   border-radius: 5%;

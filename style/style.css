@@ -222,6 +222,10 @@ footer section {
   display: flex;
   justify-content: space-evenly;
 }
+footer .footerZapatillas {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .formContacto {
   font-size: 15px;
@@ -233,7 +237,8 @@ footer section {
   font-size: 20px;
   color: black;
 }
-.mainContacto input, .mainContacto textarea {
+.mainContacto input,
+.mainContacto textarea {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
