@@ -1,0 +1,22 @@
+.home {
+  section{
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+  }
+  button {
+    font-size: 10px;
+    background-color: $bg;
+    color: $fontColor;
+    border: 1px solid $fontColor;
+    border-radius: 15%;
+    width: 100px;
+    padding: 2px;
+    box-shadow: 5px 3px 5px gray ;
+  }
+
+  button:hover{
+    filter: opacity(.5);
+    -webkit-transform:scale(1.2);transform:scale(1.2);
+  }
+}

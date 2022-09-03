@@ -70,6 +70,14 @@ footer {
       }
     }
   }
+
+  .home {
+    section {
+      button {
+        font-size: 13px;
+      }
+    }
+  }
 }
 
 @media (min-width: 1000px) {
@@ -117,6 +125,15 @@ footer {
       @include imagen(10rem);
     }
   }
+
+  .home {
+    section {
+      button {
+        font-size: 15px;
+      }
+    }
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -179,5 +196,11 @@ footer {
       @include imagen(12rem);
     }
   }
-
+  .home {
+    section {
+      button {
+        font-size: 16px;
+      }
+    }
+  }
 }

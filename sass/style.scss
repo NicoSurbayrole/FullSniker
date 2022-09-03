@@ -5,10 +5,17 @@
 @import "tipografia";
 @import "colores";
 @import "imagenes";
+@import "botones";
 
 .carrousel {
   padding-top: 2rem;
+  .imgCarrousel{
+    height: 100%;
+    width: 100%;
+  }
 }
+
+
 
 .home {
   padding: 6rem 0px;
@@ -30,4 +37,28 @@ footer {
   font-size: $sizeForm;
   display: flex;
   justify-content: $centro;
+}
+
+.mainContacto{
+  label{
+    font-size: $saizeContacto;
+    color: black;
+  }
+  input,textarea{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    align-items: center;
+    font-size: $saizeContacto;
+  }
+}
+
+.containerContacto{
+  background-color: $bg;
+  width: 50%;
+  border-radius: 5%;
+  padding: 1rem 0px;
+  margin: 0 auto;
+  align-items: center;
+  box-shadow: 10px 10px 5px gray;
 }
