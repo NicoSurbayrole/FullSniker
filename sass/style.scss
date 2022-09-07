@@ -15,10 +15,10 @@
   }
 }
 
-.home, .mainZapatillas {
+.home,
+.mainZapatillas {
   padding: 6rem 0px;
 }
-
 
 footer {
   padding: 1rem;
@@ -65,4 +65,15 @@ footer {
   margin: 0 auto;
   align-items: center;
   box-shadow: 10px 10px 5px gray;
+}
+
+div {
+  .btnContacto {
+    font-size: $saizeContacto;    
+  }
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
 }

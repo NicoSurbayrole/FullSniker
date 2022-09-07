@@ -209,7 +209,8 @@ header a:hover {
   width: 100%;
 }
 
-.home, .mainZapatillas {
+.home,
+.mainZapatillas {
   padding: 6rem 0px;
 }
 
@@ -254,4 +255,13 @@ footer .footerZapatillas {
   margin: 0 auto;
   align-items: center;
   box-shadow: 10px 10px 5px gray;
+}
+
+div .btnContacto {
+  font-size: 20px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
