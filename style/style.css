@@ -265,3 +265,21 @@ div .btnContacto {
   display: flex;
   justify-content: center;
 }/*# sourceMappingURL=style.css.map */
+
+#btn-Log{
+  border: none;
+  background-color: white;
+  border-radius: 30px;
+  font-size: 18px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#icon-nav{
+  width: 40px;
+  height: 40px;
+}
+
+#p-nav{
+  font-size: 12px;
+}
