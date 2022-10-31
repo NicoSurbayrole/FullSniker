@@ -44,7 +44,7 @@ for (producto of productos) {
       `;
     let section = document.createElement("section");
     section.innerHTML = `
-      <button type="button" class="boton">Ver Producto</button>
+      <button type="button" id="verProducto" class="boton">Ver Producto</button>
       `;
 
     inicio[0].append(main);
@@ -52,59 +52,61 @@ for (producto of productos) {
   }
 }
 
-const iciarSesion = document.getElementById("btn-Log");
+const iniciarSesion = document.getElementById("btn-Log");
 const registro = document.getElementById("registro");
 let userName = document.getElementById("p-nav");
-let validar = true;
+let validarUser = true;
 
-iciarSesion.onclick = () => {
-  if (validar) logIn();
-  else logOut();
+iniciarSesion.onclick = () => {
+  if (users.length != 0 && validarUser) logIn();
+  else if (!validarUser) logOut();
+  else {
+    alert("el usuario no esta registrado, seras redirigido al registro");
+    registrar();
+  }
 };
 
 registro.onclick = () => {
   let name = prompt("ingreasa tu nombre de usuario");
   let email = prompt("ingresa tu email");
   let password = prompt("ingresa tu contraseña");
+  const found = users.find((user) => user.email === email && user.name === name ? true : false);
 
-  users.push({ name: name, email: email, password: password });
+  if (found || !name || !password || !email) alert("ups algo salio mal, prueba nevamente ingresando bien todos los campos");
+  else {
+    alert("el usuario se creo correctamente!");
+    users.push({ name: name, email: email, password: password });
+  }
 };
 
 const logIn = () => {
-    let email = prompt("ingresa tu email");
-    let password = prompt("ingresa tu contraseña");
-    for (user in users){
-      if (email === users[user].email && password === users[user].password) {
-        userName.innerText = users[user].name.toUpperCase();
-        alert("se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario");
-        validar = false
-        break;
-      }
+  let email = prompt("ingresa tu email");
+  let password = prompt("ingresa tu contraseña");
+  for (user in users) {
+    if (email === users[user].email && password === users[user].password) {
+      userName.innerText = users[user].name.toUpperCase();
+      alert(
+        "se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario"
+      );
+      validarUser = false;
+      break;
     }
-    if(validar){
-      alert("el mail o la contraseña son incorrectos, ingreselos nuevamente")
-      while(validar){
-        logIn()
-      }
+  }
+  if (validarUser) {
+    alert("el mail o la contraseña son incorrectos, ingreselos nuevamente");
+    while (validarUser) {
+      logIn();
     }
-
+  }
 };
 
 const logOut = () => {
   alert("la sesion se cerro con exito!");
   userName.innerText = "Iniciar Sesion";
+  validarUser = true
 };
 
-
-
-
-
-
-
-
-
-
-
+let verProducto = document.getElementById("verProducto");
 
 //lo guardo como guia por las dudas
 
