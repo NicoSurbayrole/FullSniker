@@ -106,7 +106,10 @@ const logOut = () => {
   validarUser = true
 };
 
-let verProducto = document.getElementById("verProducto");
+
+//el verProductos despues lo voy a usar para modificarlo y que sea ver precio del producto y cuando aprete se cambie el boton x el precio.
+
+// let verProducto = document.getElementById("verProducto");
 
 //lo guardo como guia por las dudas
 
