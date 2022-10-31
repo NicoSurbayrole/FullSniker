@@ -32,15 +32,7 @@ let productos = [
     imgUrl: "./imagenes/pantalones/alicia-petresc-BciCcl8tjVU-unsplash.jpg",
   },
 ];
-
-let user = [
-  {
-    name: "",
-    password: "pantera1234",
-    email: "ns@hotmail.com",
-  },
-];
-
+let users = [];
 let inicio = document.getElementsByClassName("mainInterno");
 
 for (producto of productos) {
@@ -60,44 +52,61 @@ for (producto of productos) {
   }
 }
 
-const boton = document.getElementById("btn-Log");
+const iciarSesion = document.getElementById("btn-Log");
+const registro = document.getElementById("registro");
 let userName = document.getElementById("p-nav");
-let aux = "log";
-let email="";
-let password="";
+let validar = true;
 
-boton.onclick = () => {
-  if (aux === "log") logIn();
+iciarSesion.onclick = () => {
+  if (validar) logIn();
   else logOut();
 };
 
+registro.onclick = () => {
+  let name = prompt("ingreasa tu nombre de usuario");
+  let email = prompt("ingresa tu email");
+  let password = prompt("ingresa tu contraseña");
+
+  users.push({ name: name, email: email, password: password });
+};
+
 const logIn = () => {
-  if (!user[0].name) {
-    user[0].name = prompt("ingresa tu nombre de usuario");
-    email = prompt("ingresa tu email");
-    password = prompt("ingresa tu contraseña");
-  } else {
-    email = prompt("ingresa tu email");
-    password = prompt("ingresa tu contraseña");
-  }
-  if (email === user[0].email && password === user[0].password) {
-    userName.innerText = user[0].name.toUpperCase();
-    alert("se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario");
-    aux = "out";
-  } else {
-    alert("La contraseña o el email son incorrectos, ingreselos nuevamente");
-    while (email != user[0].email || password != user[0].password) {
-      logIn();
+    let email = prompt("ingresa tu email");
+    let password = prompt("ingresa tu contraseña");
+    for (user in users){
+      if (email === users[user].email && password === users[user].password) {
+        userName.innerText = users[user].name.toUpperCase();
+        alert("se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario");
+        validar = false
+        break;
+      }
     }
-  }
+    if(validar){
+      alert("el mail o la contraseña son incorrectos, ingreselos nuevamente")
+      while(validar){
+        logIn()
+      }
+    }
+
 };
 
 const logOut = () => {
   alert("la sesion se cerro con exito!");
   userName.innerText = "Iniciar Sesion";
-  user[0].name = "";
-  aux = "log";
 };
+
+
+
+
+
+
+
+
+
+
+
+
+//lo guardo como guia por las dudas
 
 // boton.addEventListener("click", () => {
 //   if (!aux) boton.innerText = "registrarse";
