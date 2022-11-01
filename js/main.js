@@ -79,6 +79,19 @@ registro.onclick = () => {
   }
 };
 
+const registrar = () =>{
+  let name = prompt("ingreasa tu nombre de usuario");
+  let email = prompt("ingresa tu email");
+  let password = prompt("ingresa tu contraseña");
+  const found = users.find((user) => user.email === email && user.name === name ? true : false);
+
+  if (found || !name || !password || !email) alert("ups algo salio mal, prueba nevamente ingresando bien todos los campos");
+  else {
+    alert("el usuario se creo correctamente!");
+    users.push({ name: name, email: email, password: password });
+  }
+}
+
 const logIn = () => {
   let email = prompt("ingresa tu email");
   let password = prompt("ingresa tu contraseña");
@@ -148,3 +161,41 @@ const logOut = () => {
 //     }
 //   }
 // };
+
+
+//---------------------------------------STORAGE Y JASON--------------------------------------------
+
+//los metodos son iguales para el sesionStorage como para el localStorage
+
+// //setea un storage
+// localStorage.setItem(key,value)
+
+// //busca y trae un valor
+// localStorage.getItem(key)
+
+// //agarra la key
+// localStorage.key(param);
+
+// //elimina un solo elemento
+// localStorage.removeItem(key)
+
+// //elimina toda la info del local storage
+// localStorage.clear()
+
+// //para pasar de obj.js a jason
+// let persona = {
+//   edad:30,
+//   name:"nicolas"
+// }
+
+// let personaJason = JSON.stringify(persona)
+
+// localStorage.setItem("persona",personaJason)
+
+// //para pasar de jason a obj.js
+// let personaRecuperada = JSON.parse(localStorage.getItem("persona"))
+// personaRecuperada.apellido = "surbayrole"
+
+// personaJason = JSON.stringify(personaRecuperada)
+// localStorage.setItem("persona", personaJason)
+
