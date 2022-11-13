@@ -60,6 +60,35 @@ for (const {titulo, imgUrl} of productos) {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const iniciarSesion = document.getElementById("btn-Log");
 // const registro = document.getElementById("registro");
 // let userName = document.getElementById("p-nav");
