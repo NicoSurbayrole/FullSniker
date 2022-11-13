@@ -29,7 +29,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
   .mainNosotros,
-.mainContacto {
+  .mainContacto {
     margin: 0;
     grid-template-areas: "header header" "home home " "footer footer";
     grid-template-columns: 1fr 1fr;
@@ -43,7 +43,7 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
   .home .mainInterno h2,
-.home .mainInterno p {
+  .home .mainInterno p {
     font-size: 14px;
     text-align: center;
   }
@@ -52,6 +52,10 @@ footer {
   }
   .home section button {
     font-size: 13px;
+  }
+
+  button{
+    font-size: 1px;
   }
 }
 @media (min-width: 1000px) {
@@ -72,7 +76,7 @@ footer {
     font-size: 18px;
   }
   .mainNosotros,
-.mainContacto {
+  .mainContacto {
     margin: 0;
     grid-template-areas: "header header header" "home home home" "footer footer footer";
     grid-template-columns: 1fr 1fr 1fr;
@@ -80,9 +84,6 @@ footer {
   footer .icon {
     height: 10rem;
     width: 10rem;
-  }
-  .home section button {
-    font-size: 15px;
   }
 }
 @media (min-width: 1200px) {
@@ -114,7 +115,7 @@ footer {
     height: 400px;
   }
   .mainNosotros,
-.mainContacto {
+  .mainContacto {
     margin: 0;
     grid-template-areas: "header header header header" "home home home home" "footer footer footer footer";
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -122,9 +123,6 @@ footer {
   footer .icon {
     height: 12rem;
     width: 12rem;
-  }
-  .home section button {
-    font-size: 16px;
   }
 }
 * {
@@ -138,7 +136,6 @@ html {
 
 button {
   font-family: "Roboto", sans-serif;
-  font-size: 13px;
 }
 
 .bg a {
@@ -151,7 +148,9 @@ button {
   font-weight: bold;
 }
 
-.bgColor, nav, footer {
+.bgColor,
+nav,
+footer {
   background-color: peru;
 }
 
@@ -160,7 +159,12 @@ header a:hover {
   border-radius: 20%;
 }
 
-.img, .mainInterno img {
+.home section button {
+  font-size: 12px;
+}
+
+.img,
+.mainInterno img {
   height: 20rem;
   width: 20rem;
 }
@@ -187,7 +191,6 @@ header a:hover {
   padding: 8px;
 }
 .home button {
-  font-size: 10px;
   background-color: peru;
   color: black;
   border: 1px solid black;
@@ -264,9 +267,9 @@ div .btnContacto {
 .btnContainer {
   display: flex;
   justify-content: center;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
 
-#btn-Log{
+#btn-Log {
   border: none;
   background-color: white;
   border-radius: 30px;
@@ -275,11 +278,12 @@ div .btnContacto {
   margin: 0 auto;
 }
 
-#icon-nav{
+#icon-nav {
   width: 40px;
   height: 40px;
 }
 
-#p-nav{
+#p-nav {
   font-size: 12px;
 }
+

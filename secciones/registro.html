@@ -18,7 +18,9 @@
       <header>
         <nav class="navbar navbar-expand-lg bg">
           <div class="container-fluid">
-          <h1><a class="navbar-brand textNav" href="../index.html">Navbar</a></h1>
+            <h1>
+              <a class="navbar-brand textNav" href="../index.html">Navbar</a>
+            </h1>
             <button
               class="navbar-toggler"
               type="button"
@@ -78,7 +80,7 @@
                     class="nav-link active textNav"
                     aria-current="page"
                     href="../secciones/contacto.html"
-                    >Contacto</a
+                    >Carrito</a
                   >
                 </li>
               </ul>
@@ -89,6 +91,15 @@
 
       <main class="home mainContacto">
         <div class="containerContacto">
+          <div class="mb-3">
+            <label for="name" class="form-label formContacto">Nombre</label>
+            <input
+              type="name"
+              class="form-control"
+              id="Nombre"
+              placeholder="First name"
+            />
+          </div>
           <div class="mb-3">
             <label
               for="exampleFormControlInput1"
@@ -103,31 +114,20 @@
             />
           </div>
           <div class="mb-3">
-            <label for="NumeroTelefono" class="form-label formContacto"
-              >Telefono</label
-            >
-            <input
-              type="number"
-              class="form-control"
-              id="NumeroTelefono"
-              placeholder="1122854490"
-            />
-          </div>
-          <div class="mb-3">
             <label
               for="exampleFormControlTextarea1"
               class="form-label formContacto"
-              >Consulta</label
+              >Contraseña</label
             >
-            <textarea
-              class="form-control formContacto"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              placeholder="ingresa tu consulta"
-            ></textarea>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="password"
+            />
           </div>
           <div class="btnContainer">
-            <button type="submit" class="btnContacto">Enviar</button>
+            <button type="submit" class="btnContacto">Registrarse</button>
           </div>
         </div>
       </main>
@@ -161,5 +161,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

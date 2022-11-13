@@ -2,49 +2,57 @@ let productos = [
   {
     titulo: "AIR FORCE ROJAS",
     imgUrl: "./imagenes/zapatillas/travis-essinger-iOv3CqiZLtE-unsplash.jpg",
+    id: 1,
   },
   {
     titulo: "AIR FORCE MULTICOLOR",
     imgUrl: "./imagenes/zapatillas/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg",
+    id: 2,
   },
   {
     titulo: "AIR FORCE ROSA",
     imgUrl: "./imagenes/zapatillas/vladimir-yelizarov-RlDOPY6rBa0-unsplash.jpg",
+    id: 3,
   },
   {
     titulo: "AIR JORDAN",
     imgUrl: "./imagenes/zapatillas/ryan-plomp-76w_eDO1u1E-unsplash.jpg",
+    id: 4,
   },
   {
     titulo: "REMERA BLANCA",
     imgUrl: "./imagenes/remeras/anomaly-WWesmHEgXDs-unsplash.jpg",
+    id: 5,
   },
   {
     titulo: "HOODIE NARANJA",
     imgUrl: "./imagenes/buzos/pablo-padilla-HbY4XIMKxus-unsplash.jpg",
+    id: 6,
   },
   {
     titulo: "REMERA FILA AZUL",
     imgUrl: "./imagenes/remeras/ahmed-sheraz-IiRqwBNVdTs-unsplash.jpg",
+    id: 7,
   },
   {
     titulo: "JEAN ROTURAS",
     imgUrl: "./imagenes/pantalones/alicia-petresc-BciCcl8tjVU-unsplash.jpg",
+    id: 8,
   },
 ];
 let users = [];
 let inicio = document.getElementsByClassName("mainInterno");
 
-for (producto of productos) {
+for (const {titulo, imgUrl} of productos) {
   let main = document.createElement("main");
-  if (producto.titulo && producto.imgUrl) {
+  if (titulo && imgUrl) {
     main.innerHTML = `
-      <h2>${producto.titulo}</h2>
-      <img class= 'imagenes' src=${producto.imgUrl}>
+      <h2>${titulo}</h2>
+      <img class= 'imagenes' src=${imgUrl}>
       `;
     let section = document.createElement("section");
     section.innerHTML = `
-      <button type="button" id="verProducto" class="boton">Ver Producto</button>
+      <button type="button" id="verProducto" class="boton">Agregar Producto</button>
       `;
 
     inicio[0].append(main);
@@ -52,73 +60,92 @@ for (producto of productos) {
   }
 }
 
-const iniciarSesion = document.getElementById("btn-Log");
-const registro = document.getElementById("registro");
-let userName = document.getElementById("p-nav");
-let validarUser = true;
+// const iniciarSesion = document.getElementById("btn-Log");
+// const registro = document.getElementById("registro");
+// let userName = document.getElementById("p-nav");
+// let validarUser = true;
 
-iniciarSesion.onclick = () => {
-  if (users.length != 0 && validarUser) logIn();
-  else if (!validarUser) logOut();
-  else {
-    alert("el usuario no esta registrado, seras redirigido al registro");
-    registrar();
-  }
-};
 
-registro.onclick = () => {
-  let name = prompt("ingreasa tu nombre de usuario");
-  let email = prompt("ingresa tu email");
-  let password = prompt("ingresa tu contraseña");
-  const found = users.find((user) => user.email === email && user.name === name ? true : false);
 
-  if (found || !name || !password || !email) alert("ups algo salio mal, prueba nevamente ingresando bien todos los campos");
-  else {
-    alert("el usuario se creo correctamente!");
-    users.push({ name: name, email: email, password: password });
-  }
-};
 
-const registrar = () =>{
-  let name = prompt("ingreasa tu nombre de usuario");
-  let email = prompt("ingresa tu email");
-  let password = prompt("ingresa tu contraseña");
-  const found = users.find((user) => user.email === email && user.name === name ? true : false);
+// iniciarSesion.onclick = () => {
+//   if (users.length != 0 && validarUser) logIn();
+//   else if (!validarUser) logOut();
+//   else {
+//     alert("el usuario no esta registrado, seras redirigido al registro");
+//     registrar();
+//   }
+// };
 
-  if (found || !name || !password || !email) alert("ups algo salio mal, prueba nevamente ingresando bien todos los campos");
-  else {
-    alert("el usuario se creo correctamente!");
-    users.push({ name: name, email: email, password: password });
-  }
-}
+// registro.onclick = () => {
+//   let name = prompt("ingreasa tu nombre de usuario");
+//   let email = prompt("ingresa tu email");
+//   let password = prompt("ingresa tu contraseña");
+//   const found = users.find((user) =>
+//     user.email === email && user.name === name ? true : false
+//   );
 
-const logIn = () => {
-  let email = prompt("ingresa tu email");
-  let password = prompt("ingresa tu contraseña");
-  for (user in users) {
-    if (email === users[user].email && password === users[user].password) {
-      userName.innerText = users[user].name.toUpperCase();
-      alert(
-        "se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario"
-      );
-      validarUser = false;
-      break;
-    }
-  }
-  if (validarUser) {
-    alert("el mail o la contraseña son incorrectos, ingreselos nuevamente");
-    while (validarUser) {
-      logIn();
-    }
-  }
-};
+  // if (found || !name || !password || !email)
+  //   Swal.fire({
+  //     icon: "error",
+  //     title: "Oops...",
+  //     text: "los datatos ya fueron registrados, intente nuevamente!",
+  //     confirmButtonColor: "peru",
+  //   });
+  // else {
+  //   Swal.fire({
+  //     position: 'center',
+  //     icon: 'success',
+  //     title: 'el usuario se creo correctamente',
+  //     showConfirmButton: false,
+  //     timer: 1800
+  //   })
+  //   users.push({ name: name, email: email, password: password });
+  // }
 
-const logOut = () => {
-  alert("la sesion se cerro con exito!");
-  userName.innerText = "Iniciar Sesion";
-  validarUser = true
-};
+// const logIn = () => {
+//   let email = prompt("ingresa tu email");
+//   let password = prompt("ingresa tu contraseña");
+//   for (user in users) {
+//     if (email === users[user].email && password === users[user].password) {
+//       userName.innerText = users[user].name.toUpperCase();
+//       Swal.fire({
+//         position: 'center',
+//         icon: 'success',
+//         title: 'se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario',
+//         showConfirmButton: false,
+//         timer: 2300
+//       })
+//       validarUser = false;
+//       break;
+//     }
+//   }
+//   if (validarUser) {
+//     Swal.fire({
+//       icon: "error",
+//       title: "Oops...",
+//       text: "El email o la contraseña son incorrectos, ingreselos nuevamente!",
+//       confirmButtonColor: "peru",
+//     });
+//     while (validarUser) {
+//       logIn();
+//     }
+//   }
+// };
 
+// const logOut = () => {
+//   Swal.fire({
+//     position: 'center',
+//     icon: 'success',
+//     title: 'la sesion se cerro con exito!',
+//     showConfirmButton: false,
+//     timer: 1800
+//   })
+//   userName.innerText = "Iniciar Sesion";
+//   validarUser = true;
+// };
+
+//------------------------------------------------------------------------
 
 //el verProductos despues lo voy a usar para modificarlo y que sea ver precio del producto y cuando aprete se cambie el boton x el precio.
 
@@ -162,7 +189,6 @@ const logOut = () => {
 //   }
 // };
 
-
 //---------------------------------------STORAGE Y JASON--------------------------------------------
 
 //los metodos son iguales para el sesionStorage como para el localStorage
@@ -198,4 +224,3 @@ const logOut = () => {
 
 // personaJason = JSON.stringify(personaRecuperada)
 // localStorage.setItem("persona", personaJason)
-
