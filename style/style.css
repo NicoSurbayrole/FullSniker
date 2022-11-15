@@ -287,3 +287,22 @@ div .btnContacto {
   font-size: 12px;
 }
 
+.oculto{
+  display: none;
+} 
+
+.mostrar{
+  display: block;
+}
+
+#btn{
+  font-size: 16px;
+  border: none;
+  background-color: peru;
+}
+
+#btn:hover{ 
+  background-color: gainsboro;
+  border-radius: 20%;
+  font-weight: bold;
+}

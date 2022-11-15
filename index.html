@@ -76,24 +76,38 @@
                   <a
                     class="nav-link active"
                     aria-current="page"
-                    href="#"
+                    href="./secciones/carrito.html"
                     >Carrito</a
                   >
                 </li>
                 <li class="nav-item">
                   <a
-                    id="registro"
                     class="nav-link active"
                     aria-current="page"
-                    href="./secciones/registro.html"
-                    >Registrarse</a
+                    ><button id="btn" class="btn">Registrarse</button></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <button
+                    id="login"
+                    class="nav-link active oculto"
+                    aria-current="page"
+                    >Iniciar sesion</button
+                  >
+                </li>
+                <li class="nav-item">
+                  <button
+                    id="logOut"
+                    class="nav-link active oculto"
+                    aria-current="page"
+                    >cerrar sesion</button
                   >
                 </li>
               </ul>
             </div>
             <div>
               <button id="btn-Log"><img id="icon-nav" src="./imagenes/icons/icons8-trabajadores-masculinos-64.png" alt="icono trabajador"></button>
-              <p id="p-nav">Iniciar Sesion</p>
+              <p id="p-nav"></p>
             </div>
           </div>
         </nav>
@@ -191,6 +205,92 @@
         <div class="mainInterno"></div>
       </div>
 
+      <main id="main" class="home mainContacto oculto">
+        <div class="containerContacto">
+          <div class="mb-3">
+            <label for="name" class="form-label formContacto">Nombre</label>
+            <input
+              type="name"
+              class="form-control"
+              id="Nombre"
+              placeholder="First name"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="exampleFormControlInput1"
+              class="form-label formContacto"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="exampleFormControlTextarea1"
+              class="form-label formContacto"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="password"
+            />
+          </div>
+          <div class="btnContainer">
+            <button type="submit" id="btnContacto" class="btnContacto">Registrarse</button>
+          </div>
+        </div>
+      </main>
+
+      <main id="mainLog" class="home mainContacto oculto">
+        <div class="containerContacto">
+          <div class="mb-3">
+            <label for="name" class="form-label formContacto">Nombre</label>
+            <input
+              type="name"
+              class="form-control"
+              id="nombreLog"
+              placeholder="First name"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="exampleFormControlInput1"
+              class="form-label formContacto"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="emailLog"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label
+              for="exampleFormControlTextarea1"
+              class="form-label formContacto"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="passwordLog"
+              placeholder="password"
+            />
+          </div>
+          <div class="btnContainer">
+            <button type="submit" id="btnLog" class="btnContacto">LogIn</button>
+          </div>
+        </div>
+      </main>
+
       <footer>
         <section>
           <a href=""
@@ -220,6 +320,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
