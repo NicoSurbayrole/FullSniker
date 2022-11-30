@@ -1,63 +1,82 @@
-// let productos = [
-//   {
-//     titulo: "AIR FORCE ROJAS",
-//     imgUrl: "./imagenes/zapatillas/travis-essinger-iOv3CqiZLtE-unsplash.jpg",
-//     id: 1,
-//   },
-//   {
-//     titulo: "AIR FORCE MULTICOLOR",
-//     imgUrl: "./imagenes/zapatillas/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg",
-//     id: 2,
-//   },
-//   {
-//     titulo: "AIR FORCE ROSA",
-//     imgUrl: "./imagenes/zapatillas/vladimir-yelizarov-RlDOPY6rBa0-unsplash.jpg",
-//     id: 3,
-//   },
-//   {
-//     titulo: "AIR JORDAN",
-//     imgUrl: "./imagenes/zapatillas/ryan-plomp-76w_eDO1u1E-unsplash.jpg",
-//     id: 4,
-//   },
-//   {
-//     titulo: "REMERA BLANCA",
-//     imgUrl: "./imagenes/remeras/anomaly-WWesmHEgXDs-unsplash.jpg",
-//     id: 5,
-//   },
-//   {
-//     titulo: "HOODIE NARANJA",
-//     imgUrl: "./imagenes/buzos/pablo-padilla-HbY4XIMKxus-unsplash.jpg",
-//     id: 6,
-//   },
-//   {
-//     titulo: "REMERA FILA AZUL",
-//     imgUrl: "./imagenes/remeras/ahmed-sheraz-IiRqwBNVdTs-unsplash.jpg",
-//     id: 7,
-//   },
-//   {
-//     titulo: "JEAN ROTURAS",
-//     imgUrl: "./imagenes/pantalones/alicia-petresc-BciCcl8tjVU-unsplash.jpg",
-//     id: 8,
-//   },
-// ];
-// let inicio = document.getElementsByClassName("mainInterno");
+let productos = [
+  {
+    titulo: "AIR FORCE ROJAS",
+    imgUrl: "./imagenes/zapatillas/travis-essinger-iOv3CqiZLtE-unsplash.jpg",
+    id: 1,
+    precio:10500
+  },
+  {
+    titulo: "AIR FORCE MULTICOLOR",
+    imgUrl: "./imagenes/zapatillas/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg",
+    id: 2,
+    precio:11000
+  },
+  {
+    titulo: "AIR FORCE ROSA",
+    imgUrl: "./imagenes/zapatillas/vladimir-yelizarov-RlDOPY6rBa0-unsplash.jpg",
+    id: 3,
+    precio:20000
+  },
+  {
+    titulo: "AIR JORDAN",
+    imgUrl: "./imagenes/zapatillas/ryan-plomp-76w_eDO1u1E-unsplash.jpg",
+    id: 4,
+    precio:25000
+  },
+  {
+    titulo: "REMERA BLANCA",
+    imgUrl: "./imagenes/remeras/anomaly-WWesmHEgXDs-unsplash.jpg",
+    id: 5,
+    precio:6000
+  },
+  {
+    titulo: "HOODIE NARANJA",
+    imgUrl: "./imagenes/buzos/pablo-padilla-HbY4XIMKxus-unsplash.jpg",
+    id: 6,
+    precio:10000
+  },
+  {
+    titulo: "REMERA FILA AZUL",
+    imgUrl: "./imagenes/remeras/ahmed-sheraz-IiRqwBNVdTs-unsplash.jpg",
+    id: 7,
+    precio:4000
+  },
+  {
+    titulo: "JEAN ROTURAS",
+    imgUrl: "./imagenes/pantalones/alicia-petresc-BciCcl8tjVU-unsplash.jpg",
+    id: 8,
+    precio:7000
+  },
+];
+let inicio = document.getElementsByClassName("mainInterno");
 
-// for (const {titulo, imgUrl,id} of productos) {
-//   let main = document.createElement("main");
-//   if (titulo && imgUrl) {
-//     main.innerHTML = `
-//       <h2>${titulo}</h2>
-//       <img class= 'imagenes' src=${imgUrl}>
-//       `;
-//     let section = document.createElement("section");
-//     section.innerHTML = `
-//       <button type="button" id=${id} class="boton">Agregar Producto</button>
-//       `;
+for (const {titulo, imgUrl,id} of productos) {
+  let main = document.createElement("main");
+  if (titulo && imgUrl) {
+    main.innerHTML = `
+      <h2>${titulo}</h2>
+      <img class= 'imagenes' src=${imgUrl}>
+      `;
+    let section = document.createElement("section");
+    section.innerHTML = `
+      <button type="button" id=${id} class="boton carrito">Agregar Producto</button>
+      `;
 
-//     inicio[0].append(main);
-//     main.appendChild(section);
-//   }
-// }
+    inicio[0].append(main);
+    main.appendChild(section);
+  }
+}
+
+let botonesCarrito = document.getElementsByClassName("carrito")
+console.log(botonesCarrito);
+
+
+for (boton of botonesCarrito) {
+  boton.onclick = (e) =>{
+    let productoBuscado = productos.find(producto => producto.id == e.target.id)
+    console.log(productoBuscado);
+  }
+} 
 
 let users = [];
 let validarUser = true;
@@ -77,7 +96,11 @@ const btnLog = document.getElementById("btnLog");
 const main = document.getElementById("main");
 const mainLog = document.getElementById("mainLog");
 
-const validUser = (name, email, password) => {
+const nombreLog = document.getElementById("nombreLog");
+const emailLog = document.getElementById("emailLog");
+const passwordLog = document.getElementById("passwordLog");
+
+const iniciarSesion = (name, email, password) => {
   for (user of users) {
     if (
       name === user.name &&
@@ -116,36 +139,12 @@ const validUser = (name, email, password) => {
     nombreLog.value = "";
     emailLog.value = "";
     while (!validarUser) {
-      validUser();
+      iniciarSesion();
     }
   }
 };
 
-if (localStorage.getItem("user")) {
-  const userStorage = JSON.parse(localStorage.getItem("user"));
-  btnRegistro.className = "home mainContacto oculto";
-  logOut.className = "nav-link active mostrar";
-  logOut.id = "btn";
-  userName.innerText = userStorage.name.toUpperCase();
-  validarUser = true;
-}
-btnRegistro.onclick = () => {
-  if (main.classList.value === "home mainContacto oculto") {
-    main.className = "home mainContacto mostrar";
-  } else {
-    main.className = "home mainContacto oculto";
-  }
-};
-
-logInBtn.onclick = () => {
-  if (mainLog.classList.value === "home mainContacto oculto") {
-    mainLog.className = "home mainContacto mostrar";
-  } else {
-    mainLog.className = "home mainContacto oculto";
-  }
-};
-
-registrar.onclick = () => {
+const registro = () => {
   const found = users.find((user) =>
     user.email === inputEmail.value || user.name === inputName.value
       ? true
@@ -195,15 +194,7 @@ registrar.onclick = () => {
   }
 };
 
-const nombreLog = document.getElementById("nombreLog");
-const emailLog = document.getElementById("emailLog");
-const passwordLog = document.getElementById("passwordLog");
-
-btnLog.onclick = () => {
-  return validUser(nombreLog.value, emailLog.value, passwordLog.value);
-};
-
-logOut.onclick = () => {
+const cerrarSesion = () => {
   Swal.fire({
     position: "center",
     icon: "success",
@@ -225,165 +216,40 @@ logOut.onclick = () => {
   }
 };
 
-// const logIn = () => {
-//   let email = prompt("ingresa tu email");
-//   let password = prompt("ingresa tu contraseña");
-//   for (user in users) {
-//     if (email === users[user].email && password === users[user].password) {
-//       userName.innerText = users[user].name.toUpperCase();
-//       Swal.fire({
-//         position: "center",
-//         icon: "success",
-//         title:
-//           "se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario",
-//         showConfirmButton: false,
-//         timer: 2300,
-//       });
-//       validarUser = false;
-//       break;
-//     }
-//   }
-//   if (validarUser) {
-//     Swal.fire({
-//       icon: "error",
-//       title: "Oops...",
-//       text: "El email o la contraseña son incorrectos, ingreselos nuevamente!",
-//       confirmButtonColor: "peru",
-//     });
-//     while (validarUser) {
-//       logIn();
-//     }
-//   }
-// };
+if (localStorage.getItem("user")) {
+  const userStorage = JSON.parse(localStorage.getItem("user"));
+  btnRegistro.className = "home mainContacto oculto";
+  logOut.className = "nav-link active mostrar";
+  logOut.id = "btn";
+  userName.innerText = userStorage.name.toUpperCase();
+  validarUser = true;
+}
 
-// const iniciarSesion = document.getElementById("btn-Log");
-// const registro = document.getElementById("registro");
-// let userName = document.getElementById("p-nav");
-// let validarUser = true;
+btnRegistro.onclick = () => {
+  if (main.classList.value === "home mainContacto oculto") {
+    main.className = "home mainContacto mostrar";
+  } else {
+    main.className = "home mainContacto oculto";
+  }
+};
 
-// iniciarSesion.onclick = () => {
-//   if (users.length != 0 && validarUser) logIn();
-//   else if (!validarUser) logOut();
-//   else {
-//     alert("el usuario no esta registrado, seras redirigido al registro");
-//     registrar();
-//   }
-// };
+logInBtn.onclick = () => {
+  if (mainLog.classList.value === "home mainContacto oculto") {
+    mainLog.className = "home mainContacto mostrar";
+  } else {
+    mainLog.className = "home mainContacto oculto";
+  }
+};
 
-// registro.onclick = () => {
-//   let name = prompt("ingreasa tu nombre de usuario");
-//   let email = prompt("ingresa tu email");
-//   let password = prompt("ingresa tu contraseña");
-// const found = users.find((user) =>
-//   user.email === email && user.name === name ? true : false
-// );
+registrar.onclick = () => {
+  registro();
+};
 
-// if (found || !name || !password || !email)
-// Swal.fire({
-//   icon: "error",
-//   title: "Oops...",
-//   text: "los datatos ya fueron registrados, intente nuevamente!",
-//   confirmButtonColor: "peru",
-// });
-// else {
-// Swal.fire({
-//   position: 'center',
-//   icon: 'success',
-//   title: 'el usuario se creo correctamente',
-//   showConfirmButton: false,
-//   timer: 1800
-// })
-//   users.push({ name: name, email: email, password: password });
-// }
+btnLog.onclick = () => {
+  iniciarSesion(nombreLog.value, emailLog.value, passwordLog.value);
+};
 
-// const logOut = () => {
-// Swal.fire({
-//   position: 'center',
-//   icon: 'success',
-//   title: 'la sesion se cerro con exito!',
-//   showConfirmButton: false,
-//   timer: 1800
-// })
-// userName.innerText = "Iniciar Sesion";
-// validarUser = true;
-// };
+logOut.onclick = () => {
+  cerrarSesion();
+};
 
-//------------------------------------------------------------------------
-
-//el verProductos despues lo voy a usar para modificarlo y que sea ver precio del producto y cuando aprete se cambie el boton x el precio.
-
-// let verProducto = document.getElementById("verProducto");
-
-//lo guardo como guia por las dudas
-
-// boton.addEventListener("click", () => {
-//   if (!aux) boton.innerText = "registrarse";
-//   else {
-//     user[0].name = prompt("ingresa tu nombre de usuario")
-//     let email = prompt("ingresa tu email");
-//     let password = prompt("ingresa tu contraseña");
-//     if(email === user[0].email && password === user[0].password) boton.innerText = user[0].name.toUpperCase()
-//     else{
-//       alert("La contraseña o el email son incorrectos, ingreselos nuevamente")
-//       email = prompt("ingresa tu email");
-//       password = prompt("ingresa tu contraseña");
-//     }
-//   }
-// });
-
-// boton.onclick = () => {
-//   if (aux === "out") {
-//     alert("la sesion se cerro con exito!")
-//     userName.innerText = "Iniciar Sesion";
-//     aux === "log"
-//   } else {
-//     user[0].name = prompt("ingresa tu nombre de usuario");
-//     let email = prompt("ingresa tu email");
-//     let password = prompt("ingresa tu contraseña");
-//     if (email === user[0].email && password === user[0].password) {
-//       userName.innerText = user[0].name.toUpperCase();
-//       alert("se inicio sesion correctamente para cerrar sesion haga click en el icono del usuario")
-//       aux = "out";
-//     } else {
-//       alert("La contraseña o el email son incorrectos, ingreselos nuevamente");
-//       email = prompt("ingresa tu email");
-//       password = prompt("ingresa tu contraseña");
-//     }
-//   }
-// };
-
-//---------------------------------------STORAGE Y JASON--------------------------------------------
-
-//los metodos son iguales para el sesionStorage como para el localStorage
-
-// //setea un storage
-// localStorage.setItem(key,value)
-
-// //busca y trae un valor
-// localStorage.getItem(key)
-
-// //agarra la key
-// localStorage.key(param);
-
-// //elimina un solo elemento
-// localStorage.removeItem(key)
-
-// //elimina toda la info del local storage
-// localStorage.clear()
-
-// //para pasar de obj.js a jason
-// let persona = {
-//   edad:30,
-//   name:"nicolas"
-// }
-
-// let personaJason = JSON.stringify(persona)
-
-// localStorage.setItem("persona",personaJason)
-
-// //para pasar de jason a obj.js
-// let personaRecuperada = JSON.parse(localStorage.getItem("persona"))
-// personaRecuperada.apellido = "surbayrole"
-
-// personaJason = JSON.stringify(personaRecuperada)
-// localStorage.setItem("persona", personaJason)
