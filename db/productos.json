@@ -1,0 +1,66 @@
+[ 
+  {
+    "titulo": "AIR FORCE ROJAS",
+    "imgUrl": "./imagenes/zapatillas/travis-essinger-iOv3CqiZLtE-unsplash.jpg",
+    "id": 1,
+    "precio": 10500,
+    "stock": 5,
+    "categoria":"zapatilla"
+  },
+  {
+    "titulo": "AIR FORCE MULTICOLOR",
+    "imgUrl": "./imagenes/zapatillas/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg",
+    "id": 2,
+    "precio": 11000,
+    "stock": 2,
+    "categoria":"zapatilla"
+  },
+  {
+    "titulo": "AIR FORCE ROSA",
+    "imgUrl": "./imagenes/zapatillas/vladimir-yelizarov-RlDOPY6rBa0-unsplash.jpg",
+    "id": 3,
+    "precio": 20000,
+    "stock": 0,
+    "categoria":"zapatilla"
+  },
+  {
+    "titulo": "AIR JORDAN",
+    "imgUrl": "./imagenes/zapatillas/ryan-plomp-76w_eDO1u1E-unsplash.jpg",
+    "id": 4,
+    "precio": 25000,
+    "stock": 124,
+    "categoria":"zapatilla"
+  },
+  {
+    "titulo": "REMERA BLANCA",
+    "imgUrl": "./imagenes/remeras/anomaly-WWesmHEgXDs-unsplash.jpg",
+    "id": 5,
+    "precio": 6000,
+    "stock": 513,
+    "categoria":"remera"
+  },
+  {
+    "titulo": "HOODIE NARANJA",
+    "imgUrl": "./imagenes/buzos/pablo-padilla-HbY4XIMKxus-unsplash.jpg",
+    "id": 6,
+    "precio": 10000,
+    "stock": 313,
+    "categoria":"buzo"
+  },
+  {
+    "titulo": "REMERA FILA AZUL",
+    "imgUrl": "./imagenes/remeras/ahmed-sheraz-IiRqwBNVdTs-unsplash.jpg",
+    "id": 7,
+    "precio": 4000,
+    "stock": 50,
+    "categoria":"remera"
+  },
+  {
+    "titulo": "JEAN ROTURAS",
+    "imgUrl": "./imagenes/pantalones/alicia-petresc-BciCcl8tjVU-unsplash.jpg",
+    "id": 8,
+    "precio": 7000,
+    "stock": 100,
+    "categoria":"jean"
+  }
+]

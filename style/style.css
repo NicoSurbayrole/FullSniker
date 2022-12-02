@@ -21,6 +21,12 @@ footer {
   grid-area: footer;
 }
 
+@media(max-width: 991px){
+  #icon-nav,#p-nav{
+    display: none;
+  }
+}
+
 @media (min-width: 500px) {
   .grilla {
     display: grid;
@@ -58,6 +64,7 @@ footer {
     font-size: 1px;
   }
 }
+
 @media (min-width: 1000px) {
   .grilla {
     margin: 0;
@@ -86,6 +93,7 @@ footer {
     width: 10rem;
   }
 }
+
 @media (min-width: 1200px) {
   .grilla {
     margin: 0;
@@ -302,6 +310,18 @@ div .btnContacto {
 }
 
 #btn:hover{ 
+  background-color: gainsboro;
+  border-radius: 20%;
+  font-weight: bold;
+}
+
+#carrito{
+  font-size: 16px;
+  background-color: peru;
+  border: none;
+}
+
+#carrito:hover{
   background-color: gainsboro;
   border-radius: 20%;
   font-weight: bold;
