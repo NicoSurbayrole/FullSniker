@@ -12,10 +12,11 @@ const pedirProductos = async () => {
     console.log(error);
   }
 };
-
 pedirProductos();
 
 let agregarCarrito = [];
+let carritoProducto;
+let carritoStorage;
 
 const miCodigo = (productos) => {
   let inicio = document.getElementsByClassName("mainInterno");
@@ -62,6 +63,9 @@ const miCodigo = (productos) => {
           });
           productoBuscado.stock--;
           agregarCarrito.push(productoBuscado);
+          carritoProducto =  JSON.stringify(agregarCarrito)
+          carritoStorage = localStorage.setItem("carrito", carritoProducto);
+
         }
       } else {
         let productoRepetido = agregarCarrito.find(
@@ -86,6 +90,8 @@ const miCodigo = (productos) => {
             });
             productoBuscado.stock--;
             agregarCarrito.push(productoBuscado);
+            carritoProducto =  JSON.stringify(agregarCarrito)
+            carritoStorage = localStorage.setItem("carrito", carritoProducto);
           }
         } else {
           if (productoRepetido.stock === 0) {
@@ -105,31 +111,29 @@ const miCodigo = (productos) => {
               timer: 1800,
             });
             productoBuscado.stock--;
-            productoBuscado.cantidad
-              ? productoBuscado.cantidad++
-              : (productoBuscado.cantidad = 2);
+            productoBuscado.cantidad ? productoBuscado.cantidad++ : (productoBuscado.cantidad = 2);
           }
         }
       }
     };
   }
 
-  let navCarrito = document.getElementById("carrito");
+  // let navCarrito = document.getElementById("carrito");
 
-  navCarrito.onclick = () => {
-    if (agregarCarrito.length === 0) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "el carrito esta vacio!",
-        confirmButtonColor: "peru",
-      });
-    } else {
-      for (const { titulo, cantidad, stock, precio } of agregarCarrito){
-        !cantidad ? alert(`${titulo}, cantidad: 1, stock: ${stock}, precio: ${precio}`) : alert(`${titulo}, cantidad: ${cantidad}, stock: ${stock}, precio: ${precio}`);
-      }
-    }
-  };
+  // navCarrito.onclick = () => {
+  //   if (agregarCarrito.length === 0) {
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "el carrito esta vacio!",
+  //       confirmButtonColor: "peru",
+  //     });
+  //   } else {
+  //     for (const { titulo, cantidad, stock, precio } of agregarCarrito){
+  //       !cantidad ? alert(`${titulo}, cantidad: 1, stock: ${stock}, precio: ${precio}`) : alert(`${titulo}, cantidad: ${cantidad}, stock: ${stock}, precio: ${precio}`);
+  //     }
+  //   }
+  // };
 
   let users = [];
   let validarUser = true;
@@ -309,4 +313,5 @@ const miCodigo = (productos) => {
     cerrarSesion();
     mainProducto.className = "home oculto";
   };
-};
+
+}
